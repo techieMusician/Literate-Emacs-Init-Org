@@ -124,6 +124,14 @@
 (use-package magit)
 ;; look into force for github integration
 
+;;;; ORGMODE SETTINGS
+;;; Setu orgmode
+(use-package org
+  :config
+  (setq org-ellipsis " ^"))
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
