@@ -1,1 +1,1 @@
-("~/github/prelude/" "~/github/magit-blog/" "~/github/ido-completing-read-plus/" "~/github/emacsinit/" "~/github/diff_test_repo/" "~/github/better-defaults/" "~/.emacs.d.Mike/")
+("~/.emacs.d.Mike/" "~/github/prelude/" "~/github/magit-blog/" "~/github/ido-completing-read-plus/" "~/github/emacsinit/" "~/github/diff_test_repo/" "~/github/better-defaults/")
