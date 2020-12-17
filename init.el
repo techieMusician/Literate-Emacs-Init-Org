@@ -132,7 +132,7 @@
 
 (use-package org-bullets
   :after org
-  :hook (org-bode . org-bullets-mode))
+  :hook (org-mode . org-bullets-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;DON'T CHANGE THIS
