@@ -1,3 +1,6 @@
+
+Modified-by: Mike Grammes <mike.grammes@gmail.com>
+
 ;;;;;This is my emacs config following youtube tut Emacs from Scratch
 ;;;;;I will be maintiaing this allongside a prelude config so I can decide
 ;;;;;Which I prefer. This is a work in progress
