@@ -105,7 +105,8 @@
   :init (which-key-mode)
   :diminish which-key-mode
   :config
-  (setq which-key-idle-delay 0.3))
+  (setq which-key-idle-delay 0.3)
+  (define-key help-map "\C-h" 'which-key-C-h-dispatch))
 
 ;; helpful adds more useful information with helpfiles
 (use-package helpful
