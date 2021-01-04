@@ -176,6 +176,10 @@
 ;;; Setu orgmode
 (use-package org
   :hook (org-mode . efs/org-mode-setup)
+  :bind
+  ("C-c c" . org-capture)
+  ("C-c l" . org-store-link)
+  ("C-c a" . org-agenda)
   :config
   (setq org-ellipsis " ▾")
 					; (setq org-ellipsis " ^")
