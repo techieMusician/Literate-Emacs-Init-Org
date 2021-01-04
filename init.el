@@ -201,6 +201,15 @@
 	  ("projects.org" :maxlevel . 1)))
   ;; Save Org buffers after refiling:
   (advice-add 'org-refile :after 'org-save-alll-org-buffers)
+  (setq org-tag-alist
+	'((:startgroup)
+					;put mutually exclusize tags here
+	  (:endgroup)
+	  ("@errand" . ?E)
+	  ("@home" . ?H)
+	  ("@music" . ?M)
+	  ("idea" . ?i)
+	  ("note" . ?n)))
   (require 'org-protocol)
   (efs/org-font-setup))
 
