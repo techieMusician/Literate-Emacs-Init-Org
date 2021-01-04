@@ -3,8 +3,10 @@
  (magit-diff
   ("--no-ext-diff" "--stat"))
  (magit-dispatch nil)
+ (magit-gitignore nil)
  (magit-log
   ("-n256" "--graph" "--decorate"))
  (magit-merge nil)
  (magit-revert
-  ("--edit")))
+  ("--edit"))
+ (magit-tag nil))
