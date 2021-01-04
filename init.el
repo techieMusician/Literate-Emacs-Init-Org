@@ -184,7 +184,7 @@
   (setq org-ellipsis " ▾")
 					; (setq org-ellipsis " ^")
   (setq org-agenda-start-with-log-mode t)
-  (setq org-log-done 'time)
+  (setq org-log-done 'note)
   (setq org-log-into-drawer t)
   (setq org-agenda-files
 	'("~/org/inbox.org"
@@ -194,7 +194,7 @@
   (add-to-list 'org-modules 'org-habit)
   (setq org-habit-graph-column 60)
   (setq org-todo-keywords
-	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")))
+	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d@/!)")))
   (setq org-refile-targets
 	'(("archives.org" :maxlevel . 1)
 	  ("tasks.org" :maxlevel . 1)
