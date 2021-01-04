@@ -76,12 +76,16 @@
 
 ;; Set up IVY for completion
 ;; ran M-x install-package cousel to get counsel and swiper
-
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper))
   :config
   (ivy-mode 1))
+
+;; ivyrich is an ivy extenstion that gives extra info about commands
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode 1))
 
 ;; configure counsel
 (use-package counsel
@@ -90,11 +94,6 @@
 	 ("C-x C-f" . counsel-find-file)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history)))
-
-;; ivyrich is an ivy extenstion that gives extra info about commands
-(use-package ivy-rich
-  :init
-  (ivy-rich-mode 1))
 
 ;; add rainbow parenthesis to programming modes
 (use-package rainbow-delimiters
