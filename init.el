@@ -176,6 +176,7 @@
   :config
   (setq org-ellipsis " ▾")
 					; (setq org-ellipsis " ^")
+  (require 'org-protocol)
   (efs/org-font-setup))
 
 ;;;; Setup org-roam
