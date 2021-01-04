@@ -17,7 +17,7 @@
 (scroll-bar-mode -1)         ; Disable visable Scrollbar
 (tool-bar-mode -1)           ; Disable toolbar
 (tooltip-mode -1)            ; Disable tooltips
-;(set-fringe-mode 10)         ; Give space around emacs
+(set-fringe-mode 10)         ; Give space around emacs
 (menu-bar-mode -1)           ; Get rid of menubar
 
 ;; Set a pretty theme
