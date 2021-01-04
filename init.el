@@ -195,6 +195,12 @@
   (setq org-habit-graph-column 60)
   (setq org-todo-keywords
 	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")))
+  (setq org-refile-targets
+	'(("archives.org" :maxlevel . 1)
+	  ("tasks.org" :maxlevel . 1)
+	  ("projects.org" :maxlevel . 1)))
+  ;; Save Org buffers after refiling:
+  (advice-add 'org-refile :after 'org-save-alll-org-buffers)
   (require 'org-protocol)
   (efs/org-font-setup))
 
