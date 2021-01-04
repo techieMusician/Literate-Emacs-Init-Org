@@ -200,7 +200,7 @@
 	  ("tasks.org" :maxlevel . 1)
 	  ("projects.org" :maxlevel . 1)))
   ;; Save Org buffers after refiling:
-  (advice-add 'org-refile :after 'org-save-alll-org-buffers)
+  (advice-add 'org-refile :after 'org-save-all-org-buffers)
   ;; add tags
   (setq org-tag-alist
 	'((:startgroup)
@@ -216,8 +216,8 @@
   ;; Configure org-capture templates
   (setq org-capture-templates
     `(("t" "Tasks / Projects")
-      ("tt" "Task" entry (file+olp "~/org/tasks.org" "Inbox")
-           "* TODO %?\n  %U\n  %i" :empty-lines 1)))
+      ("tt" "Task" entry (file "~/org/inbox.org")
+           "* TODO %?\n  %U\n  %i" :empty-lines 1)))t
   
   (require 'org-protocol)
   (efs/org-font-setup))
