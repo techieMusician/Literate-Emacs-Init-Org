@@ -201,6 +201,7 @@
 	  ("projects.org" :maxlevel . 1)))
   ;; Save Org buffers after refiling:
   (advice-add 'org-refile :after 'org-save-alll-org-buffers)
+  ;; add tags
   (setq org-tag-alist
 	'((:startgroup)
 					;put mutually exclusize tags here
@@ -210,6 +211,14 @@
 	  ("@music" . ?M)
 	  ("idea" . ?i)
 	  ("note" . ?n)))
+  ;; Configure custom agenda views
+
+  ;; Configure org-capture templates
+  (setq org-capture-templates
+    `(("t" "Tasks / Projects")
+      ("tt" "Task" entry (file+olp "~/org/tasks.org" "Inbox")
+           "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)))
+  
   (require 'org-protocol)
   (efs/org-font-setup))
 
