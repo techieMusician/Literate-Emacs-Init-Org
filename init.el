@@ -194,7 +194,7 @@
   (add-to-list 'org-modules 'org-habit)
   (setq org-habit-graph-column 60)
   (setq org-todo-keywords
-	'((sequence "TODO(t!)" "NEXT(n!)" "|" "DONE(d@/!)")))
+	'((sequence "TODO(t!)" "NEXT(n@/!)" "|" "DONE(d@/!)")))
   (setq org-refile-targets
 	'(("archives.org" :maxlevel . 1)
 	  ("tasks.org" :maxlevel . 1)
@@ -217,7 +217,7 @@
   (setq org-capture-templates
     `(("t" "Tasks / Projects")
       ("tt" "Task" entry (file+olp "~/org/tasks.org" "Inbox")
-           "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)))
+           "* TODO %?\n  %U\n  %i" :empty-lines 1)))
   
   (require 'org-protocol)
   (efs/org-font-setup))
