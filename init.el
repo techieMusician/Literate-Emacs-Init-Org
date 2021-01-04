@@ -1,5 +1,5 @@
 
-Modified-by: Mike Grammes <mike.grammes@gmail.com>
+;;;;;;Modified-by: Mike Grammes <mike.grammes@gmail.com>
 
 ;;;;;This is my emacs config following youtube tut Emacs from Scratch
 ;;;;;I will be maintiaing this allongside a prelude config so I can decide
@@ -182,8 +182,9 @@ Modified-by: Mike Grammes <mike.grammes@gmail.com>
 (use-package org-roam
   :config
   (setq org-roam-directory "~/org")
-  (add-hook 'after-init-hook 'org-roam-mode))
-
+  (add-hook 'after-init-hook 'org-roam-mode)
+  (require 'org-roam-protocol))
+  
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
@@ -205,7 +206,7 @@ Modified-by: Mike Grammes <mike.grammes@gmail.com>
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(unicode-fonts org-roam visual-fill-column org-bullets which-key use-package rainbow-delimiters ivy-rich helpful general forge doom-themes counsel-projectile command-log-mode all-the-icons)))
+   '(org-roam-protocol unicode-fonts org-roam visual-fill-column org-bullets which-key use-package rainbow-delimiters ivy-rich helpful general forge doom-themes counsel-projectile command-log-mode all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
