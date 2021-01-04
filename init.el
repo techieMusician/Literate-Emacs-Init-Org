@@ -35,14 +35,14 @@
   (add-hook mode (lambda () (display-line-numbers-mode -1))))
 
 ;;;; Font Configuration
-(defvar runemacs/default-font-size 180)
+(defvar runemacs/default-font-size 100)
 (set-face-attribute 'default nil :font "Fira Code Retina" :height runemacs/default-font-size)
 
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height 260)
+(set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height 110)
 
 ;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 295 :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 115 :weight 'regular)
 
 ;;; Manage packages with use-package
 
