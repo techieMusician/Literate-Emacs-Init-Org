@@ -186,6 +186,10 @@
 	'("~/org/inbox.org"
 	  "~/org/projects.org"
 	  "~/org/homeserver.org"))
+  (require 'org-habit)
+  (add-to-list 'org-modules 'org-habit)
+  (setq org-habit-graph-column 60)
+  
   (require 'org-protocol)
   (efs/org-font-setup))
 
