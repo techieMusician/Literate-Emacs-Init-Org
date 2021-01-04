@@ -93,7 +93,9 @@
 	 ("C-x b" . counsel-ibuffer)
 	 ("C-x C-f" . counsel-find-file)
 	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history)))
+	 ("C-r" . 'counsel-minibuffer-history))
+  :config
+  (counsel-mode 1))
 
 ;; add rainbow parenthesis to programming modes
 (use-package rainbow-delimiters
