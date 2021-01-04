@@ -179,6 +179,13 @@
   :config
   (setq org-ellipsis " ▾")
 					; (setq org-ellipsis " ^")
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-agenda-files
+	'("~/org/inbox.org"
+	  "~/org/projects.org"
+	  "~/org/homeserver.org"))
   (require 'org-protocol)
   (efs/org-font-setup))
 
