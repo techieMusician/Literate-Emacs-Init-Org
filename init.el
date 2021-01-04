@@ -110,6 +110,8 @@
 
 ;; helpful adds more useful information with helpfiles
 (use-package helpful
+  :config
+  (global-set-key (kbd "C-c C-d") #'helpful-at-point)
   :custom
   (counsel-describe-function-function #'helpful-callable)
   (counsel-describe-variable-function #'helpful-variable)
