@@ -215,9 +215,8 @@
 
   ;; Configure org-capture templates
   (setq org-capture-templates
-    `(("t" "Tasks / Projects")
-      ("tt" "Task" entry (file "~/org/inbox.org")
-           "* TODO %?\n  %U\n  %i" :empty-lines 1)))t
+    `(("t" "Task" entry (file "~/org/inbox.org")
+       "* TODO %?\n  %U\n  %i" :empty-lines 1)))
   
   (require 'org-protocol)
   (efs/org-font-setup))
