@@ -9,7 +9,7 @@
  (position . 34))
 ("org-capture-last-stored"
  (filename . "~/org/inbox.org")
- (front-context-string . "\n* still seems t")
- (rear-context-string . "1-04 Mon 18:12]\n")
- (position . 3697))
+ (front-context-string . "* TODO figure ou")
+ (rear-context-string . "make a heading\n\n")
+ (position . 3760))
 )

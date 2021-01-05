@@ -69,9 +69,13 @@
 
 (use-package all-the-icons)
 
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
 
 ;; command log mode makes a nice window to the side for information
 (use-package command-log-mode)
+
 
 
 ;; Set up IVY for completion
@@ -261,7 +265,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-roam-protocol unicode-fonts org-roam visual-fill-column org-bullets which-key use-package rainbow-delimiters ivy-rich helpful general forge doom-themes counsel-projectile command-log-mode all-the-icons)))
+   '(doom-modeline org-roam-protocol unicode-fonts org-roam visual-fill-column org-bullets which-key use-package rainbow-delimiters ivy-rich helpful general forge doom-themes counsel-projectile command-log-mode all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
