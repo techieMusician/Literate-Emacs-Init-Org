@@ -217,18 +217,6 @@
   (setq org-capture-templates
     `(("t" "Task" entry (file "~/org/inbox.org")
        "* TODO %?\n  %U\n  %i" :empty-lines 1)))
-  ;; Configure org-roam-capture templates
-  (setq org-roam-capture-templates
-    `(("d" "default" plain (function org-roam-capture--get-point)
-       "%?"
-       :file-name "%<%Y%m%d%H%M%S>-${slug}"
-       :head "#+title: ${title}\n"
-       :unnarrowed t)
-      ("e" "Heading" enty (function org-roam-capture--get-point)
-       "%?"
-       :file-name "%<%Y%m%d%H%M%S>-${slug}"
-       :head "#+title: ${title}\n"
-       :unnarrowed t)))
   (require 'org-protocol)
   (efs/org-font-setup))
 
@@ -237,6 +225,19 @@
   :config
   (setq org-roam-directory "~/org")
   (add-hook 'after-init-hook 'org-roam-mode)
+    ;; Configure org-roam-capture templates
+  (setq org-roam-capture-templates
+    `(("d" "default" plain (function org-roam-capture--get-point)
+       "%?"
+       :file-name "%<%Y%m%d%H%M%S>-${slug}"
+       :head "#+title: ${title}\n"
+       :unnarrowed t)
+      ("t" "Task" plain (function org-roam-capture--get-point)
+       "* TODO %?\n %U\n %i" :empty-lines 1
+       :file-name "%<%Y%m%d%H%M%S>-${slug}"
+       :head "#+title: ${title}\n"
+       :unnarrowed t)))
+
   (require 'org-roam-protocol))
   
 (use-package org-bullets
