@@ -18,7 +18,7 @@
 (tool-bar-mode -1)           ; Disable toolbar
 (tooltip-mode -1)            ; Disable tooltips
 (set-fringe-mode 10)         ; Give space around emacs
-(menu-bar-mode -1)           ; Get rid of menubar
+(menu-bar-mode 1)            ;  Keep menubar
 
 ;; Set a pretty theme
 ;(load-theme 'doom-dracula)

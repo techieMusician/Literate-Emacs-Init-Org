@@ -8,8 +8,8 @@
  (rear-context-string . "\n* 2021 January\n")
  (position . 34))
 ("org-capture-last-stored"
- (filename . "~/org/inbox.org")
- (front-context-string . "* TODO figure ou")
- (rear-context-string . "make a heading\n\n")
- (position . 3760))
+ (filename . "~/org/20210126220646-second_brain.org")
+ (front-context-string . "#+title: Second ")
+ (rear-context-string)
+ (position . 1))
 )

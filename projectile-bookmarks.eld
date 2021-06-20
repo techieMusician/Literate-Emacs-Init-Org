@@ -1,1 +1,1 @@
-("~/.emacs.d.Mike/" "~/github/prelude/" "~/github/magit-blog/" "~/github/ido-completing-read-plus/" "~/github/emacsinit/" "~/github/diff_test_repo/" "~/github/better-defaults/")
+("~/.emacs.d.Mike/" "~/github/retris/" "~/github/prelude/" "~/github/magit-blog/" "~/github/ido-completing-read-plus/" "~/github/first-contributions/" "~/github/emacs-from-scratch/" "~/github/diff_test_repo/" "~/github/better-defaults/" "~/.cache/pacaur/linux-rt/" "~/.cache/pacaur/auracle-git/")

@@ -1,0 +1,29 @@
+#+title: My Emacs Configuration Orgfile
+* Intention
+This is my (admitedly) newest attempt at:
+1. Creating my own emacs configuration from scratch
+2. Get myself to use methods of planning and structure to allow myself to accomlish goals
+* Welcome
+
+Here is my configuration. This file creates an init.el which is loaded by Emacs at startup.
+
+
+* Configure Babel Languages
+
+To execute or export code make sure to load languages.  Setup =org-babel-load-languages= for each language to use 
+
+#+begin_src emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp .t)
+     (python . t)
+     (shell . t)))
+
+  (push '("conf-unix" . conf-unix) org-src-lang-modes)
+#+end_src
+
+:Results:
+#+RESULTS:
+: ((conf-unix . conf-unix) (C . c) (C++ . c++) (asymptote . asy) (bash . sh) (beamer . latex) (calc . fundamental) (cpp . c++) (ditaa . artist) (dot . fundamental) (elisp . emacs-lisp) (ocaml . tuareg) (screen . shell-script) (shell . sh) (sqlite . sql))
+:END:
+
