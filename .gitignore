@@ -1,3 +1,5 @@
 /elpa/*
 /auto-save-list/*
 /transient/
+org-roam.db
+projectile-bookmarks.eld
