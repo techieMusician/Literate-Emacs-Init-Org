@@ -1,1 +1,0 @@
-("~/.emacs.d.Mike/" "~/github/zd-tutorial/" "~/github/retris/" "~/github/prelude/" "~/github/magit-blog/" "~/github/ido-completing-read-plus/" "~/github/first-contributions/" "~/github/emacs-from-scratch/" "~/github/better-defaults/")
