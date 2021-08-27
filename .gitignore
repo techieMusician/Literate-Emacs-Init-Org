@@ -4,3 +4,4 @@
 org-roam.db
 projectile-bookmarks.eld
 /savefile/*
+/*.bak
