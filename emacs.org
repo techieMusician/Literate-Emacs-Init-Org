@@ -104,10 +104,7 @@ To execute or export code make sure to load languages.  Setup =org-babel-load-la
 
     (use-package all-the-icons)
 
-    (use-package doom-modeline
-      :init (doom-modeline-mode 1)
-      :custom ((doom-modeline-height 15)))
-
+   
     ;; command log mode makes a nice window to the side for information
     (use-package command-log-mode)
 
@@ -180,7 +177,18 @@ To execute or export code make sure to load languages.  Setup =org-babel-load-la
     ;; look into force for github integration
 #+END_SRC
 
- 
+** Doom Mode
+Currently uses auto-revert-check-vc-info to stay current with git branches.
+
+
+#+NAME: doomMode
+#+BEGIN_SRC emacs-lisp :tangle yes
+   (use-package doom-modeline
+        :init (doom-modeline-mode 1)
+        :custom ((doom-modeline-height 15)))
+
+  (setq auto-revert-check-vc-info t)
+#+END_SRC
 *  ORGMODE SETTINGS
 
 #+BEGIN_SRC emacs-lisp :tangle yes
