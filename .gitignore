@@ -8,7 +8,11 @@ projectile-bookmarks.eld
 *.org#
 /forge-database.sqlite
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /.org-id-locations
 /.#emacs.org
 >>>>>>> cbf5022 (add to gitignore)
+=======
+/.org-id-locations
+>>>>>>> d681ae3 (Update to org-roam v2 and remove warning)

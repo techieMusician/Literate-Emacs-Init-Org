@@ -207,10 +207,15 @@
 
 ;;;; Setup org-roam
 (use-package org-roam
+  :init
+;; remove warning for org-roam-v2
+  (setq org-roam-v2-ack t)
   :config
   (setq org-roam-directory "~/org")
-  (add-hook 'after-init-hook 'org-roam-mode)
-    ;; Configure org-roam-capture templates
+  (setq org-roam-db-location
+        (concat org-roam-directory "org-roam.db"))
+
+  ;; Configure org-roam-capture templates
   (setq org-roam-capture-templates
     `(("d" "default" plain (function org-roam-capture--get-point)
        "%?"
@@ -223,7 +228,8 @@
        :head "#+title: ${title}\n"
        :unnarrowed t)))
 
-  (require 'org-roam-protocol))
+  (require 'org-roam-protocol)
+  (org-roam-setup))
 
 (use-package org-bullets
   :after org
