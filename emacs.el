@@ -226,6 +226,7 @@
        :unnarrowed t)))
 
   (require 'org-roam-protocol)
+  (org-roam-db-autosync-mode)
   (org-roam-setup))
 
 (use-package org-bullets
