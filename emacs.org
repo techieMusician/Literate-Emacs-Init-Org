@@ -1,11 +1,14 @@
 #+title: My Emacs Configuration Orgfile
-* Intention
-This is my (admitedly) newest attempt at:
-1. Creating my own emacs configuration from scratch
-2. Get myself to use methods of planning and structure to allow myself to accomlish goals
+
+* Table of Contents :toc:
 
 * Welcome
 Here is my configuration. This file creates an init.el which is loaded by Emacs at startup.
+
+** Intention
+This is my (admitedly) newest attempt at:
+1. Creating my own emacs configuration from scratch
+2. Get myself to use methods of planning and structure to allow myself to accomlish goals
 
 * Intro and initial settings
 
@@ -53,7 +56,7 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
     (add-hook mode (lambda () (display-line-numbers-mode -1))))
 #+END_SRC
 
-* Font Configuraition
+** Font Configuraition
 #+BEGIN_SRC emacs-lisp :tangle yes
     ;;;; Font Configuration
     (defvar runemacs/default-font-size 100)
@@ -67,6 +70,8 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
 #+END_SRC
 
 * Manage packages with use-package
+
+** Set up use-package and package archives ELPA and MELPA
 #+BEGIN_SRC emacs-lisp :tangle yes
     ;;; Manage packages with use-package
 
@@ -86,19 +91,26 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
 
     (require 'use-package)
     (setq use-package-always-ensure t)
+#+END_SRC
 
+** Setting up themes
+#+BEGIN_SRC emacs-lisp :tangle yes
     ;; Doom themes
     (use-package doom-themes
       :init (load-theme 'doom-tomorrow-night t))
 
+#+END_SRC
 
-
-   
-    ;; command log mode makes a nice window to the side for information
+** Command log Mode
+This makes a nice window to the side for information
+#+BEGIN_SRC emacs-lisp :tangle yes
     (use-package command-log-mode)
+#+END_SRC
 
-
-
+** IVY
+Ivy is used for completion
+Also uses counsel and swiper. Run M-x install-package counsel to get them
+#+BEGIN_SRC emacs-lisp :tangle yes
     ;; Set up IVY for completion
     ;; ran M-x install-package cousel to get counsel and swiper
     (use-package ivy
@@ -121,20 +133,27 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
              ("C-r" . 'counsel-minibuffer-history))
       :config
       (counsel-mode 1))
+#+END_SRC
 
-    ;; add rainbow parenthesis to programming modes
+** Rainbow Parenthesis
+    add rainbow parenthesis to programming modes making it look better
+#+BEGIN_SRC emacs-lisp :tangle yes
     (use-package rainbow-delimiters
       :hook (prog-mode . rainbow-delimiters-mode))
+#+END_SRC
 
-    ;; add which-key: a panal pop to tell what keys match
+**  which-key: a panal pop to tell what keys match
+#+BEGIN_SRC emacs-lisp :tangle yes
     (use-package which-key
       :init (which-key-mode)
       :diminish which-key-mode
       :config
       (setq which-key-idle-delay 0.3)
       (define-key help-map "\C-h" 'which-key-C-h-dispatch))
+#+END_SRC
 
-    ;; helpful adds more useful information with helpfiles
+**  Helpful: adds more useful information with helpfiles
+#+BEGIN_SRC emacs-lisp :tangle yes
     (use-package helpful
       :custom
       (counsel-describe-function-function #'helpful-callable)
@@ -145,7 +164,11 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
       ([remap describe-command] . helpful-command)
       ([remap describe-variable] . counsel-describe-variable)
       ([remap describe-key] . helpful-key))
+#+END_SRC
 
+** Set up projectile N/A
+I am currently not using this
+#+BEGIN_SRC emacs-lisp 
     ;; set up projectile
     (use-package projectile
       :diminish projectile-mode
@@ -160,7 +183,10 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
 
     (use-package counsel-projectile
       :config (counsel-projectile-mode))
+#+END_SRC
 
+** Magit Settings
+#+BEGIN_SRC emacs-lisp :tangle yes
     ;; set up magit for git integration
     (use-package magit)
     ;; look into force for github integration
@@ -179,6 +205,7 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
   (use-package all-the-icons)
   (setq auto-revert-check-vc-info t)
 #+END_SRC
+
 *  ORGMODE SETTINGS
 
 #+BEGIN_SRC emacs-lisp :tangle yes
@@ -294,6 +321,7 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
     :hook (org-mode . efs/org-mode-visual-fill))
 
 #+END_SRC
+
 * Org-Babel Settings
 ** Configure Babel Languages
 To execute or export code make sure to load languages.  Setup =org-babel-load-languages= for each language to use

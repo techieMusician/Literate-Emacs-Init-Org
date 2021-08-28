@@ -66,13 +66,7 @@
 (use-package doom-themes
   :init (load-theme 'doom-tomorrow-night t))
 
-
-
-
-;; command log mode makes a nice window to the side for information
 (use-package command-log-mode)
-
-
 
 ;; Set up IVY for completion
 ;; ran M-x install-package cousel to get counsel and swiper
@@ -97,11 +91,9 @@
   :config
   (counsel-mode 1))
 
-;; add rainbow parenthesis to programming modes
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-;; add which-key: a panal pop to tell what keys match
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
@@ -109,7 +101,6 @@
   (setq which-key-idle-delay 0.3)
   (define-key help-map "\C-h" 'which-key-C-h-dispatch))
 
-;; helpful adds more useful information with helpfiles
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -120,21 +111,6 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
-
-;; set up projectile
-(use-package projectile
-  :diminish projectile-mode
-  :config (projectile-mode)
-  :custom ((projectile-competion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :init
-  (when (file-directory-p "~/github")
-    (setq projectile-project-search-path '("~/github")))
-  (setq projectile-switch-project-action #'projectile-dired))
-
-(use-package counsel-projectile
-  :config (counsel-projectile-mode))
 
 ;; set up magit for git integration
 (use-package magit)
