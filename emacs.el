@@ -118,7 +118,10 @@
 
 (use-package doom-modeline
       :init (doom-modeline-mode 1)
-      :custom ((doom-modeline-height 15)))
+      :custom (doom-modeline-height 15)
+               (doom-modeline-bar-width 70)
+               (doom-modeline-window-width-limit fill-column)
+               (doom-modeline-vcs-max-length 25))
 
 (use-package all-the-icons)
 (setq auto-revert-check-vc-info t)

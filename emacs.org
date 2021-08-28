@@ -222,12 +222,15 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
 
 #+NAME: doomMode
 #+BEGIN_SRC emacs-lisp :tangle yes
-   (use-package doom-modeline
-        :init (doom-modeline-mode 1)
-        :custom ((doom-modeline-height 15)))
+         (use-package doom-modeline
+              :init (doom-modeline-mode 1)
+              :custom (doom-modeline-height 15)
+                       (doom-modeline-bar-width 70)
+                       (doom-modeline-window-width-limit fill-column)
+                       (doom-modeline-vcs-max-length 25))
 
-  (use-package all-the-icons)
-  (setq auto-revert-check-vc-info t)
+        (use-package all-the-icons)
+        (setq auto-revert-check-vc-info t)
 #+END_SRC
 
 ** toc-org - auto genteration of Table of Contents
