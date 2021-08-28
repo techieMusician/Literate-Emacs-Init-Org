@@ -102,7 +102,7 @@ To execute or export code make sure to load languages.  Setup =org-babel-load-la
     (use-package doom-themes
       :init (load-theme 'doom-tomorrow-night t))
 
-    (use-package all-the-icons)
+
 
    
     ;; command log mode makes a nice window to the side for information
@@ -187,6 +187,7 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
         :init (doom-modeline-mode 1)
         :custom ((doom-modeline-height 15)))
 
+  (use-package all-the-icons)
   (setq auto-revert-check-vc-info t)
 #+END_SRC
 *  ORGMODE SETTINGS

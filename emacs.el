@@ -68,6 +68,9 @@
 
 (use-package all-the-icons)
 
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
 
 ;; command log mode makes a nice window to the side for information
 (use-package command-log-mode)
@@ -139,12 +142,6 @@
 ;; set up magit for git integration
 (use-package magit)
 ;; look into force for github integration
-
-(use-package doom-modeline
-      :init (doom-modeline-mode 1)
-      :custom ((doom-modeline-height 15)))
-
-(setq auto-revert-check-vc-info t)
 
 (defun efs/org-mode-setup ()
   (org-indent-mode)
