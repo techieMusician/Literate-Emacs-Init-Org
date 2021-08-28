@@ -211,10 +211,7 @@
 ;; remove warning for org-roam-v2
   (setq org-roam-v2-ack t)
   :config
-  (setq org-roam-directory "~/org")
-  (setq org-roam-db-location
-        (concat org-roam-directory "org-roam.db"))
-
+  (setq org-roam-directory (file-truename "~/org/"))
   ;; Configure org-roam-capture templates
   (setq org-roam-capture-templates
     `(("d" "default" plain (function org-roam-capture--get-point)

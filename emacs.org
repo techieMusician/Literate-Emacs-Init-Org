@@ -324,10 +324,7 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
   ;; remove warning for org-roam-v2
     (setq org-roam-v2-ack t)
     :config
-    (setq org-roam-directory "~/org")
-    (setq org-roam-db-location
-          (concat org-roam-directory "org-roam.db"))
-
+    (setq org-roam-directory (file-truename "~/org/"))
     ;; Configure org-roam-capture templates
     (setq org-roam-capture-templates
       `(("d" "default" plain (function org-roam-capture--get-point)
@@ -357,6 +354,9 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
     :hook (org-mode . efs/org-mode-visual-fill))
 
 #+END_SRC
+
+#+RESULTS:
+| (lambda nil (add-hook 'after-save-hook #'org-babel-tangle :append :local)) | efs/org-mode-visual-fill | org-bullets-mode | efs/org-mode-setup | toc-org-enable | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | (lambda nil (display-line-numbers-mode -1)) | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
 * Org-Babel Settings
 ** Configure Babel Languages
