@@ -6,3 +6,4 @@ projectile-bookmarks.eld
 /savefile/*
 /*.bak
 *.org#
+/forge-database.sqlite
