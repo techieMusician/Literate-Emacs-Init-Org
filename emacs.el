@@ -23,10 +23,6 @@
 (set-fringe-mode 10)         ; Give space around emacs
 (menu-bar-mode 1)            ;  Keep menubar
 
-;; Set a pretty theme
-;(load-theme 'doom-dracula)
-
-
 ;; add line number mode globally
 (global-display-line-numbers-mode t)
 

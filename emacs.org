@@ -8,6 +8,8 @@ This is my (admitedly) newest attempt at:
 Here is my configuration. This file creates an init.el which is loaded by Emacs at startup.
 
 * Intro and initial settings
+
+** Intro
 #+BEGIN_SRC emacs-lisp :tangle yes
 
   ;;;;;;Modified-by: Mike Grammes <mike.grammes@gmail.com>
@@ -23,7 +25,12 @@ Here is my configuration. This file creates an init.el which is loaded by Emacs 
   ;;; Some of this will be added into an org file for literate programming.
 
   ;; use ln -s .emacs.d.Mike .emacs.d to create a soft link for this config
+#+END_SRC
 
+** Settings to make me better at using emacs
+I turn off the annoying start message because I hate it. Turning off the scroll-bar, tool-bar and tool-tip make me use emacs like a big boy. Leaving the menu-bar is helpful for now.  Set line number mode to only appear when programming.
+
+#+BEGIN_SRC emacs-lisp :tangle yes
   ;; Inhibit annoying start message
   (setq inhibit-startup-message t)
 
@@ -34,10 +41,6 @@ Here is my configuration. This file creates an init.el which is loaded by Emacs 
   (tooltip-mode -1)            ; Disable tooltips
   (set-fringe-mode 10)         ; Give space around emacs
   (menu-bar-mode 1)            ;  Keep menubar
-
-  ;; Set a pretty theme
-  ;(load-theme 'doom-dracula)
-
 
   ;; add line number mode globally
   (global-display-line-numbers-mode t)
