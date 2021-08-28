@@ -1,5 +1,9 @@
 ;;;;;;Modified-by: Mike Grammes <mike.grammes@gmail.com>
 
+;;;;; DO NOT MODIFY THIS FILE BY HAND
+;;    This file is maintaned at ~/emacs.d.Mike/emacs.org
+;;    Make all changes there
+
 ;;;;;This is my emacs config following youtube tut Emacs from Scratch
 ;;;;;I will be maintiaing this allongside a prelude config so I can decide
 ;;;;;Which I prefer. This is a work in progress
@@ -256,6 +260,18 @@
 
 (use-package visual-fill-column
   :hook (org-mode . efs/org-mode-visual-fill))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp .t)
+   (python . t)
+   (shell . t)))
+
+(push '("conf-unix" . conf-unix) org-src-lang-modes)
+
+(add-hook 'org-mode-hook
+          (lambda () (add-hook 'after-save-hook #'org-babel-tangle
+                          :append :local)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

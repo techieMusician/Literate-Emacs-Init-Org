@@ -7,61 +7,47 @@ This is my (admitedly) newest attempt at:
 * Welcome
 Here is my configuration. This file creates an init.el which is loaded by Emacs at startup.
 
-* Configure Babel Languages
-To execute or export code make sure to load languages.  Setup =org-babel-load-languages= for each language to use
-
-#+begin_src emacs-lisp
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp .t)
-     (python . t)
-     (shell . t)))
-
-  (push '("conf-unix" . conf-unix) org-src-lang-modes)
-#+end_src
-
-:Results:
-#+RESULTS:
-: ((conf-unix . conf-unix) (C . c) (C++ . c++) (asymptote . asy) (bash . sh) (beamer . latex) (calc . fundamental) (cpp . c++) (ditaa . artist) (dot . fundamental) (elisp . emacs-lisp) (ocaml . tuareg) (screen . shell-script) (shell . sh) (sqlite . sql))
-:END:
-
 * Intro and initial settings
 #+BEGIN_SRC emacs-lisp :tangle yes
 
-    ;;;;;;Modified-by: Mike Grammes <mike.grammes@gmail.com>
+  ;;;;;;Modified-by: Mike Grammes <mike.grammes@gmail.com>
 
-    ;;;;;This is my emacs config following youtube tut Emacs from Scratch
-    ;;;;;I will be maintiaing this allongside a prelude config so I can decide
-    ;;;;;Which I prefer. This is a work in progress
+  ;;;;; DO NOT MODIFY THIS FILE BY HAND
+  ;;    This file is maintaned at ~/emacs.d.Mike/emacs.org
+  ;;    Make all changes there
 
-    ;;; Some of this will be added into an org file for literate programming.
+  ;;;;;This is my emacs config following youtube tut Emacs from Scratch
+  ;;;;;I will be maintiaing this allongside a prelude config so I can decide
+  ;;;;;Which I prefer. This is a work in progress
 
-    ;; use ln -s .emacs.d.Mike .emacs.d to create a soft link for this config
+  ;;; Some of this will be added into an org file for literate programming.
 
-    ;; Inhibit annoying start message
-    (setq inhibit-startup-message t)
+  ;; use ln -s .emacs.d.Mike .emacs.d to create a soft link for this config
 
-
-    ;; Remove other UI crutches, be a big boy!
-    (scroll-bar-mode -1)         ; Disable visable Scrollbar
-    (tool-bar-mode -1)           ; Disable toolbar
-    (tooltip-mode -1)            ; Disable tooltips
-    (set-fringe-mode 10)         ; Give space around emacs
-    (menu-bar-mode 1)            ;  Keep menubar
-
-    ;; Set a pretty theme
-    ;(load-theme 'doom-dracula)
+  ;; Inhibit annoying start message
+  (setq inhibit-startup-message t)
 
 
-    ;; add line number mode globally
-    (global-display-line-numbers-mode t)
+  ;; Remove other UI crutches, be a big boy!
+  (scroll-bar-mode -1)         ; Disable visable Scrollbar
+  (tool-bar-mode -1)           ; Disable toolbar
+  (tooltip-mode -1)            ; Disable tooltips
+  (set-fringe-mode 10)         ; Give space around emacs
+  (menu-bar-mode 1)            ;  Keep menubar
 
-    ;; Disable line numebers for some modes
-    (dolist (mode '(org-mode-hook
-                    term-mode-hook
-                    shell-command-with-editor-mode-hook
-                    eshell-mode-hook))
-      (add-hook mode (lambda () (display-line-numbers-mode -1))))
+  ;; Set a pretty theme
+  ;(load-theme 'doom-dracula)
+
+
+  ;; add line number mode globally
+  (global-display-line-numbers-mode t)
+
+  ;; Disable line numebers for some modes
+  (dolist (mode '(org-mode-hook
+                  term-mode-hook
+                  shell-command-with-editor-mode-hook
+                  eshell-mode-hook))
+    (add-hook mode (lambda () (display-line-numbers-mode -1))))
 #+END_SRC
 
 * Font Configuraition
@@ -305,6 +291,34 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
     :hook (org-mode . efs/org-mode-visual-fill))
 
 #+END_SRC
+* Org-Babel Settings
+** Configure Babel Languages
+To execute or export code make sure to load languages.  Setup =org-babel-load-languages= for each language to use
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp .t)
+     (python . t)
+     (shell . t)))
+
+  (push '("conf-unix" . conf-unix) org-src-lang-modes)
+#+END_SRC
+
+:Results:
+#+RESULTS:
+: ((conf-unix . conf-unix) (C . c) (C++ . c++) (asymptote . asy) (bash . sh) (beamer . latex) (calc . fundamental) (cpp . c++) (ditaa . artist) (dot . fundamental) (elisp . emacs-lisp) (ocaml . tuareg) (screen . shell-script) (shell . sh) (sqlite . sql))
+:END:
+** Set up auto-matic org-tangle
+add a hook to make org-babel tangle file on save
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (add-hook 'org-mode-hook
+            (lambda () (add-hook 'after-save-hook #'org-babel-tangle
+                            :append :local)))
+#+END_SRC
+
+#+RESULTS:
+| (lambda nil (add-hook 'after-save-hook #'org-babel-tangle :append :local)) | efs/org-mode-visual-fill | org-bullets-mode | efs/org-mode-setup | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | (lambda nil (display-line-numbers-mode -1)) | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
 * DON'T CHANGE THIS: Custom set variables
 there can only be one of these
