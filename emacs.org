@@ -23,7 +23,7 @@
 - [[#org-babel-settings][Org-Babel Settings]]
   - [[#configure-babel-languages][Configure Babel Languages]]
   - [[#set-up-auto-matic-org-tangle][Set up auto-matic org-tangle]]
-- [[#dont-change-this-custom-set-variables][DON'T CHANGE THIS: Custom set variables]]
+- [[#dont-change-this-custom-set-variables-na][DON'T CHANGE THIS: Custom set variables N/A]]
   - [[#learn-more-about-what-this-means][learn more about what this means]]
 
 * Welcome
@@ -381,11 +381,11 @@ add a hook to make org-babel tangle file on save
 #+RESULTS:
 | (lambda nil (add-hook 'after-save-hook #'org-babel-tangle :append :local)) | efs/org-mode-visual-fill | org-bullets-mode | efs/org-mode-setup | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | (lambda nil (display-line-numbers-mode -1)) | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
-* DON'T CHANGE THIS: Custom set variables
-there can only be one of these
+* DON'T CHANGE THIS: Custom set variables N/A
+there can only be one of these right now it is updating in my init.el as well so I turned this off
 
 ** TODO learn more about what this means
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
