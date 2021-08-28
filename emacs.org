@@ -1,6 +1,30 @@
 #+title: My Emacs Configuration Orgfile
 
 * Table of Contents :toc:
+- [[#welcome][Welcome]]
+  - [[#intention][Intention]]
+- [[#intro-and-initial-settings][Intro and initial settings]]
+  - [[#intro][Intro]]
+  - [[#settings-to-make-me-better-at-using-emacs][Settings to make me better at using emacs]]
+  - [[#font-configuraition][Font Configuraition]]
+- [[#manage-packages-with-use-package][Manage packages with use-package]]
+  - [[#set-up-use-package-and-package-archives-elpa-and-melpa][Set up use-package and package archives ELPA and MELPA]]
+  - [[#setting-up-themes][Setting up themes]]
+  - [[#command-log-mode][Command log Mode]]
+  - [[#ivy][IVY]]
+  - [[#rainbow-parenthesis][Rainbow Parenthesis]]
+  -  [[#which-key-a-panal-pop-to-tell-what-keys-match][which-key: a panal pop to tell what keys match]]
+  -  [[#helpful-adds-more-useful-information-with-helpfiles][Helpful: adds more useful information with helpfiles]]
+  - [[#set-up-projectile-na][Set up projectile N/A]]
+  - [[#magit-settings][Magit Settings]]
+  - [[#doom-mode][Doom Mode]]
+  - [[#toc-org---auto-genteration-of-table-of-contents][toc-org - auto genteration of Table of Contents]]
+-  [[#orgmode-settings][ORGMODE SETTINGS]]
+- [[#org-babel-settings][Org-Babel Settings]]
+  - [[#configure-babel-languages][Configure Babel Languages]]
+  - [[#set-up-auto-matic-org-tangle][Set up auto-matic org-tangle]]
+- [[#dont-change-this-custom-set-variables][DON'T CHANGE THIS: Custom set variables]]
+  - [[#learn-more-about-what-this-means][learn more about what this means]]
 
 * Welcome
 Here is my configuration. This file creates an init.el which is loaded by Emacs at startup.
@@ -206,6 +230,12 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
   (setq auto-revert-check-vc-info t)
 #+END_SRC
 
+** toc-org - auto genteration of Table of Contents
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package toc-org
+    :commands toc-org-enable
+    :init (add-hook 'org-mode-hook 'toc-org-enable))
+#+END_SRC
 *  ORGMODE SETTINGS
 
 #+BEGIN_SRC emacs-lisp :tangle yes

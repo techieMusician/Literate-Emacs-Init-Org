@@ -123,6 +123,10 @@
 (use-package all-the-icons)
 (setq auto-revert-check-vc-info t)
 
+(use-package toc-org
+  :commands toc-org-enable
+  :init (add-hook 'org-mode-hook 'toc-org-enable))
+
 (defun efs/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
