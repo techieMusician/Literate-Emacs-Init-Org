@@ -7,3 +7,8 @@ projectile-bookmarks.eld
 /*.bak
 *.org#
 /forge-database.sqlite
+<<<<<<< HEAD
+=======
+/.org-id-locations
+/.#emacs.org
+>>>>>>> cbf5022 (add to gitignore)
