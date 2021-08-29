@@ -55,7 +55,7 @@ This is my (admitedly) newest attempt at:
 #+END_SRC
 
 ** Settings to make me better at using emacs
-I turn off the annoying start message because I hate it. Turning off the scroll-bar, tool-bar and tool-tip make me use emacs like a big boy. Leaving the menu-bar is helpful for now.  Set line number mode to only appear when programming.
+I turn off the annoying start message because I hate it. Turning off the scroll-bar, tool-bar and tool-tip make me use emacs like a big boy. Leaving the menu-bar is helpful for now.  
 
 #+BEGIN_SRC emacs-lisp :tangle yes
   ;; Inhibit annoying start message
@@ -68,7 +68,11 @@ I turn off the annoying start message because I hate it. Turning off the scroll-
   (tooltip-mode -1)            ; Disable tooltips
   (set-fringe-mode 10)         ; Give space around emacs
   (menu-bar-mode 1)            ;  Keep menubar
+#+END_SRC
 
+Set line number mode to only appear when programming.
+
+#+BEGIN_SRC emacs-lisp :tangle yes
   ;; add line number mode globally
   (global-display-line-numbers-mode t)
 
@@ -132,7 +136,7 @@ This makes a nice window to the side for information
 #+END_SRC
 
 ** IVY
-Ivy is used for completion
+Ivy is used for completion and Ivy-rich for extra info about commands
 Also uses counsel and swiper. Run M-x install-package counsel to get them
 #+BEGIN_SRC emacs-lisp :tangle yes
     ;; Set up IVY for completion
@@ -235,10 +239,12 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
 
 ** toc-org - auto genteration of Table of Contents
 #+BEGIN_SRC emacs-lisp :tangle yes
+
   (use-package toc-org
-    :commands toc-org-enable
-    :init (add-hook 'org-mode-hook 'toc-org-enable))
-#+END_SRC
+     :commands toc-org-enable
+     :init (add-hook 'org-mode-hook 'toc-org-enable))
+
+     #+END_SRC
 *  ORGMODE SETTINGS
 
 #+BEGIN_SRC emacs-lisp :tangle yes
