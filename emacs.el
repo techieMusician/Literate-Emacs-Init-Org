@@ -187,6 +187,9 @@
         '(("archives.org" :maxlevel . 1)
           ("tasks.org" :maxlevel . 1)
           ("projects.org" :maxlevel . 1)))
+  (setq org-refile-use-outline-path 'file)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-outline-path-complete-in-steps nil)
   ;; Save Org buffers after refiling:
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
   ;; add tags
