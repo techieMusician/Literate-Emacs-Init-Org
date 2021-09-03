@@ -207,8 +207,11 @@
   ;; Configure org-capture templates
   (setq org-capture-templates
     `(("t" "Task" entry (file "~/org/inbox.org")
-       "* TODO %?\n  %U\n  %i" :empty-lines 1)))
+       "* TODO %?\n  %U\n  %i" :empty-lines 1)
+      ("w" "org-protocol" entry (file "~/org/refile.org")
+       "* TODO Review %a\n%U\n%:initial\n")))
   (require 'org-protocol)
+  (setq org-protocol-default-template-key "w")
   (efs/org-font-setup))
 
 ;;;; Setup org-roam
