@@ -20,6 +20,8 @@
   - [[#doom-mode][Doom Mode]]
   - [[#toc-org---auto-genteration-of-table-of-contents][toc-org - auto genteration of Table of Contents]]
 -  [[#orgmode-settings][ORGMODE SETTINGS]]
+  - [[#basic-org-mode-ui-settings][Basic Org-Mode UI Settings]]
+  - [[#org-and-gtd-settings][Org and GTD Settings]]
   - [[#this-sets-up-my-org-capture-templates-and-org-protocol][This sets up my org-capture templates and Org Protocol]]
   - [[#org-roam-settings][Org-roam settings]]
 - [[#org-babel-settings][Org-Babel Settings]]
@@ -247,8 +249,10 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
      :init (add-hook 'org-mode-hook 'toc-org-enable))
 
      #+END_SRC
-*  ORGMODE SETTINGS
 
+*  ORGMODE SETTINGS
+** Basic Org-Mode UI Settings
+These set up the UI for org-mede. 
 #+BEGIN_SRC emacs-lisp :tangle yes
 
   (defun efs/org-mode-setup ()
@@ -282,6 +286,11 @@ Currently uses auto-revert-check-vc-info to stay current with git branches.
     (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
     (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
     (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+  #+END_SRC
+
+** Org and GTD Settings
+  
+  #+BEGIN_SRC emacs-lisp :tangle yes
   ;;; Setu orgmode
   (use-package org
     :hook (org-mode . efs/org-mode-setup)
@@ -389,9 +398,6 @@ Now I can click on that bookmark and it will add to [[file+emacs:~/org/refile.or
 
 #+END_SRC
 
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp :tangle yes
 #+RESULTS:
 | (lambda nil (add-hook 'after-save-hook #'org-babel-tangle :append :local)) | efs/org-mode-visual-fill | org-bullets-mode | efs/org-mode-setup | toc-org-enable | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | (lambda nil (display-line-numbers-mode -1)) | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
@@ -423,10 +429,9 @@ add a hook to make org-babel tangle file on save
 
 #+RESULTS:
 | (lambda nil (add-hook 'after-save-hook #'org-babel-tangle :append :local)) | efs/org-mode-visual-fill | org-bullets-mode | efs/org-mode-setup | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | (lambda nil (display-line-numbers-mode -1)) | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
-
 * DON'T CHANGE THIS: Custom set variables N/A
 there can only be one of these right now it is updating in my init.el as well so I turned this off
-
+This is auto populating in my init.el file. Lookinto this.
 ** TODO learn more about what this means
 #+BEGIN_SRC emacs-lisp :tangle no
   (custom-set-variables

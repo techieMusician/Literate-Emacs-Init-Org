@@ -161,6 +161,7 @@
   (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+
 ;;; Setu orgmode
 (use-package org
   :hook (org-mode . efs/org-mode-setup)
@@ -204,15 +205,15 @@
           ("note" . ?n)))
   ;; Configure custom agenda views
 
-  ;; Configure org-capture templates
-  (setq org-capture-templates
-    `(("t" "Task" entry (file "~/org/inbox.org")
-       "* TODO %?\n  %U\n  %i" :empty-lines 1)
-      ("w" "org-protocol" entry (file "~/org/refile.org")
-       "* TODO Review %a\n%U\n%:initial\n")))
-  (require 'org-protocol)
-  (setq org-protocol-default-template-key "w")
-  (efs/org-font-setup))
+;; Configure org-capture templates
+(setq org-capture-templates
+  `(("t" "Task" entry (file "~/org/inbox.org")
+     "* TODO %?\n  %U\n  %i" :empty-lines 1)
+    ("w" "org-protocol" entry (file "~/org/refile.org")
+     "* TODO Review %a\n%U\n%:initial\n")))
+(require 'org-protocol)
+(setq org-protocol-default-template-key "w")
+(efs/org-font-setup))
 
 ;;;; Setup org-roam
 (use-package org-roam
